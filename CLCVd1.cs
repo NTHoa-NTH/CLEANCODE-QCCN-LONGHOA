@@ -97,6 +97,7 @@ public class CleanSchoolProgram {
             System.out.print("Chon: ");
             menu = sc.nextInt(); sc.nextLine();
 
+//Tạo switch case lựa chọn đối tượng
             switch(menu) {
                 case 1:
                     sm.add(new Student("SV01", "Hoa", 20, 8.5));
