@@ -1,3 +1,4 @@
+//Cleancode
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,7 +82,7 @@ public static class StudentMenu
         int choice = 0;
         while (choice != 9)
         {
-            Console.WriteLine("\n--- QUẢN LÝ SINH VIÊN ---");
+            Console.WriteLine("\n QUẢN LÝ SINH VIÊN ");
             Console.WriteLine("1. Thêm SV");
             Console.WriteLine("2. Xóa SV");
             Console.WriteLine("3. Cập nhật SV");
@@ -182,6 +183,52 @@ public static class StudentMenu
     {
         foreach (var s in repo.FindExcellent())
             Console.WriteLine("SV giỏi: " + s);
+    }
+}
+#endregion
+#region Main Program
+public class CleanSchoolProgram
+{
+    public static void Main()
+    {
+        var studentRepo = new StudentRepository();
+        int menu = 0;
+
+        while (menu != 99)
+        {
+            Console.WriteLine("\n MENU CHÍNH ");
+            Console.WriteLine("1. Quản lý Sinh viên");
+            Console.WriteLine("2. Quản lý Giáo viên");
+            Console.WriteLine("3. Quản lý Môn học");
+            Console.WriteLine("4. Quản lý Đăng ký học");
+            Console.WriteLine("5. Quản lý Điểm");
+            Console.WriteLine("6. Báo cáo tổng hợp");
+            Console.WriteLine("99. Thoát");
+            Console.Write("Chọn: ");
+            if (!int.TryParse(Console.ReadLine(), out menu)) continue;
+
+            switch (menu)
+            {
+                case 1:
+                    StudentMenu.Run(studentRepo);
+                    break;
+                case 2:
+                    Console.WriteLine("Tính năng Quản lý Giáo viên (tương tự quản lý sinh viên).");
+                    break;
+                case 3:
+                    Console.WriteLine("Tính năng Quản lý Môn học (tương tự quản lý sinh viên).");
+                    break;
+                case 4:
+                    Console.WriteLine("Tính năng Quản lý Đăng ký học (tương tự quản lý sinh viên).");
+                    break;
+                case 5:
+                    Console.WriteLine("Tính năng Quản lý Điểm (tương tự quản lý sinh viên).");
+                    break;
+                case 6:
+                    Console.WriteLine("Tính năng Báo cáo tổng hợp (tương tự quản lý sinh viên).");
+                    break;
+            }
+        }
     }
 }
 #endregion
